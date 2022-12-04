@@ -1,0 +1,154 @@
+//DISPLAY TEXT 
+
+
+<TextView
+ android:id="@+id/title_text_view"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content" 
+ android:text="@string/my_photos"
+ android:textAppearance="?android:textAppearanceLarge"
+ android:textColor="#4689C8"
+ android:textStyle="bold" />
+ 
+ //DISPLAY IMAGE
+ 
+ 
+ <ImageView
+ android:id="@+id/photo_image_view"
+ android:layout_width="match_parent"
+ android:layout_height="match_parent"
+ android:scaleType="centerCrop"
+ android:src="@drawable/beach" />
+ 
+ //DISPLAY BUTTON WITH TEXT
+ 
+ 
+ <ImageView
+ android:id="@+id/photo_image_view"
+ android:layout_width="match_parent"
+ android:layout_height="match_parent"
+ android:scaleType="centerCrop"
+ android:src="@drawable/beach" />
+ 
+ //DISPLAY PLAIN RECTANGLE
+ 
+ <View
+ android:layout_width="match_parent"
+ android:layout_height="100dp"
+ android:background="#4E4B4F" />
+ 
+ 
+ //DISPLAY EDIT TEXT
+ 
+ <EditText
+ android:id="@+id/album_description_view"
+ android:layout_width="match_parent"
+ android:layout_height="wrap_content"
+ android:hint="@string/album_description"
+ android:inputType="textMultiLine" />
+ 
+ //DISPLAY SPINNER  Click on it to show a list 
+of dropdown options
+ 
+ <Spinner
+ android:id="@+id/sort_by_spinner"
+ android:layout_width="match_parent"
+ android:layout_height="wrap_content" />
+ 
+ //DISPLAY CHECK BOX Checkbox with text label
+ 
+ <CheckBox
+ android:id="@+id/notify_me_checkbox"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content" 
+ android:text="@string/notify_me"
+ android:textAppearance="?android:textAppearanceMedium" />
+ 
+ 
+ //DISPLAY RADIO BUTTON  Radio button (where you can 
+select one out of a group of 
+radio buttons)
+
+
+ <RadioGroup
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:orientation="vertical">
+ <RadioButton
+ android:id="@+id/yes_radio_button"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:text="@string/yes"
+ android:textAppearance="?android:textAppearanceMedium" />
+ <RadioButton
+ android:id="@+id/no_radio_button"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content"
+ android:text="@string/no"
+ android:textAppearance="?android:textAppearanceMedium" />
+</RadioGroup
+
+//DISPLAY RATING BAR
+
+<RatingBar
+ android:id="@+id/rating_bar"
+ style="?android:attr/ratingBarStyleSmall"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content" 
+ android:numStars="5"
+ android:rating="2.5"
+ android:stepSize="0.5" />
+ 
+ // DISPLAY SWITCH On / off switch that you can drag 
+right or left (or just tap to toggle 
+the state)
+
+<Switch
+ android:id="@+id/backup_photos_switch"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content" 
+ android:text="@string/auto_backup_photos"
+ android:textAppearance="?android:textAppearanceSmall" />
+ 
+ //DISPLAY SEEKBAR Displays progress and allows you 
+to drag the handle anywhere in 
+the bar (i.e. for music or video 
+player)
+
+<SeekBar
+ android:id="@+id/seek_bar"
+ android:layout_width="match_parent"
+ android:layout_height="wrap_content" 
+ android:max="100"
+ android:progress="20" />
+ 
+ //DISPLAY SEARCH BAR A search field that you can type 
+a query into
+
+<SearchView
+ android:id="@+id/search_viewr"
+ android:layout_width="match_parent"
+ android:layout_height="wrap_content" 
+ android:iconifiedByDefault="false"
+ android:queryHint="@string/search_photos" />
+ 
+ //DISPLAY PROGRESS BAR Loading spinner
+ 
+ 
+ <ProgressBar
+ android:id="@+id/loading_spinner"
+ style="@style/Widget.AppCompat.ProgressBar"
+ android:layout_width="wrap_content"
+ android:layout_height="wrap_content" />
+ 
+ //DISPLAY PROGRESS BAR Horizontal loading indicator
+ 
+ 
+ <ProgressBar
+ android:id="@+id/progress_bar"
+ style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+ android:layout_width="match_parent"
+ android:layout_height="wrap_content" 
+ android:indeterminate="false"
+ android:max="100"
+ android:progress="40"/>
