@@ -1,0 +1,21 @@
+Data Binding library is a support library that provides the feature of binding UI components in an activity/fragment to the data sources of the application. 
+The library carries out this binding task in a declarative format and not in a programmatic way. 
+Below is an example to understand the working of this library accurately:
+
+To find a TextView widget and bind it to the userName property of the ViewModel variable, the findViewById() method is called:
+
+TextView textView = findViewById(R.id.sample_text);
+
+textView.setText(viewModel.getUserName());
+
+After using the Data Binding library, the above code changes by using the assignment expression as follows:
+
+<TextView
+
+ android:text=”@{viewmodel.userName}” />
+
+Advantages of Data Binding Component:
+
+Make code simpler and easy to maintain by removing UI frameworks called in the activity.
+Allows classes and methods to observe changes in data
+Allows to make objects and fill which works as collection observables.
