@@ -1,0 +1,12 @@
+LiveData component is an observable data holder class i.e, the contained value can be observed. 
+LiveData is a lifecycle-aware component and thus it performs its functions according to the lifecycle state of other application components. 
+Further, if the observer’s lifecycle state is active i.e., either STARTED or RESUMED, only then LiveData updates the app component. 
+LiveData always checks the observer’s state before making any update to ensure that the observer must be active to receive it.
+If the observer’s lifecycle state is destroyed, LiveData is capable of removing it, and thus it avoids memory leaks. 
+It makes the task of data synchronization easier.
+
+Advantages of LiveData component:
+
+UI is updated as per the appropriate change in the data
+It removes the stopped or destroyed activities which reduce the chance of app crash
+No memory leaks as LiveData is a lifecycle-aware component.
