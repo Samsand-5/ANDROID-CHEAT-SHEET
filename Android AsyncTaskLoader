@@ -1,0 +1,27 @@
+AsyncTaskLoader
+
+android.content.AsyncTaskLoader<D> is a loader that uses AsyncTask to perform the task.
+It is an abstract class and to use it we need to extend and override its methods. 
+In our example we will iterate a list using ListView. Find some methods that need to be overridden.
+loadInBackground() : Performs actual task in background and returns the result.
+onCanceled(D data) : This method is called if task is cancelled before completion. It is used to clean up data post cancellation.
+cancelLoadInBackground() : We override this method to cancel the background process. If there is no process in background, it is not going to be called.
+
+ListView
+android.widget.ListView is a view which shows items in a vertically scrolling list. To achieve it we need to add ListView in layout.
+<ListView
+     android:id="@+id/employees"
+     android:layout_height="match_parent"
+     android:layout_width="match_parent"/> which will be accessed as
+ListView employeeListView = (ListView) findViewById(R.id.employees);
+employeeListView.setAdapter(empAdapter);  
+
+BaseAdapter
+android.widget.BaseAdapter is common implementation of adapters like ArrayAdapter<T>, CursorAdapter and SimpleAdapter. BaseAdapter can be used with ListView.
+To use BaseAdapter , we need to extend it in our class and override required methods. Some of them are given below.
+View getView(int position, View view, ViewGroup parent) : Returns a view that displays data at specified position.
+Object getItem(int position): Returns the data item for a given position.
+long getItemId(int position): Returns the row id associated with the given position.
+int getCount() : Count of data items represented by adapter.
+
+Finally to display data, we need to call notifyDataSetChanged().
