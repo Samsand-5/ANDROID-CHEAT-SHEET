@@ -1,0 +1,33 @@
+why the Android Apps lag which are as follows:
+GC running frequently
+Doing too much work on the main thread
+
+
+Steps to be taken to improve the performance:
+
+Do not allocate any object if it is not required. Do not allocate objects early, allocate objects only when it is required. Use lazy initialization.
+
+Avoid Auto-Boxing as Integer, Boolean, etc takes more memory as classes like Integer takes more memory so use int where ever possible instead of Integer.
+
+Use ArrayMap and SparseArray. Refer to this article, this will show why and when to use ArrayMap and SparseArray to optimize your Android Applications.
+
+Use the concept of object pools to avoid memory churn. Learn about the bitmap pool.
+
+Keep heavy work away from the main thread. Transfer it to the background thread.
+
+Use static final for constants or const val in Kotlin.
+
+Avoid Internal Getters/Setters wherever not necessary (direct field access is 3x faster)
+
+Don't leak contexts in inner classes.
+
+Use static inner classes over non-static.
+
+Use LRU cache for the bitmap to avoid redundant decoding of bitmap, it reduces GC calling again and again.
+
+Use StrictMode to find things you did by mistake like an accidental disk or network access or database query on the application's main thread in Android Development.
+
+Use Profile GPU Rendering: It gives a quick visual representation of how much time it takes to render the frames of a UI window relative to the 16ms benchmark. 
+You can enable it from Settings -> Developer Options -> Monitoring Section -> Select Profile GPU Rendering.
+
+And finally, do not allocate a large number of unnecessary objects.
