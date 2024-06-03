@@ -1,0 +1,6 @@
+Data Retention in Memory:
+
+Short-term Cache (In-Memory): Data in memory caches (like LruCache) should typically be kept for a short duration, depending on memory constraints and app usage patterns. 
+Commonly, this is until the app is closed or the system needs to free up memory.
+
+Long-term Cache (Disk Cache): Data stored in disk cache (Room or SQLite) can be retained for a longer duration, often until the data is explicitly invalidated or updated.
