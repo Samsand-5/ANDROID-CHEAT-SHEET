@@ -1,0 +1,52 @@
+Managing Cost-Effective API Calls:
+
+Caching:
+Use local caching to store previously fetched data. This reduces the need to make repeated API calls.
+Implement caching strategies with libraries like Retrofit and OkHttp.
+
+Rate Limiting:
+Implement rate limiting to control the frequency of API calls.
+Use mechanisms like WorkManager to schedule background syncs.
+
+Optimizing Data Requests:
+Request only the necessary data fields.
+Implement incremental loading (loading data only as needed).
+
+Data Compression:
+Enable server-side and client-side data compression to reduce the size of API responses.
+
+Retry and Backoff:
+Implement retry logic with exponential backoff for handling transient errors.
+Example of Caching with Retrofit and OkHttp:
+
+Add Caching Interceptor:
+
+val cacheSize = 10 * 1024 * 1024 // 10 MB
+val cache = Cache(context.cacheDir, cacheSize)
+
+val okHttpClient = OkHttpClient.Builder()
+    .cache(cache)
+    .addInterceptor { chain ->
+        var request = chain.request()
+        request = if (hasNetwork(context))
+            request.newBuilder().header("Cache-Control", "public, max-age=" + 5).build()
+        else
+            request.newBuilder().header("Cache-Control", "public, only-if-cached, max-stale=" + 60 * 60 * 24 * 7).build()
+        chain.proceed(request)
+    }
+    .build()
+
+val retrofit = Retrofit.Builder()
+    .baseUrl(BASE_URL)
+    .client(okHttpClient)
+    .addConverterFactory(GsonConverterFactory.create())
+    .build()
+
+
+Network Check Utility:
+
+fun hasNetwork(context: Context): Boolean {
+    val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+    val activeNetwork = connectivityManager.activeNetworkInfo
+    return activeNetwork != null && activeNetwork.isConnected
+}
