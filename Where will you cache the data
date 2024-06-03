@@ -1,0 +1,3 @@
+In-Memory Cache: Use in-memory caches like LruCache or libraries like Glide for images.
+
+Disk Cache: Use Room, SQLite, or SharedPreferences for longer-term storage on disk.
