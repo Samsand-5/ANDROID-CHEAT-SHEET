@@ -1,0 +1,18 @@
+ApiService:
+
+interface ApiService {
+    @GET("data")
+    suspend fun getData(
+        @Query("page") page: Int,
+        @Query("size") size: Int
+    ): ApiResponse<List<DataItem>>
+}
+
+Creating Retrofit Instance:
+
+val retrofit = Retrofit.Builder()
+    .baseUrl(BASE_URL)
+    .addConverterFactory(GsonConverterFactory.create())
+    .build()
+
+val apiService = retrofit.create(ApiService::class.java)
