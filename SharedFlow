@@ -1,0 +1,41 @@
+Characteristics:
+
+Similar to StateFlow but doesn’t have an initial value.
+Multiple collectors can receive emissions independently.
+Suitable for broadcasting events or updates to multiple subscribers.
+
+Use Cases:
+
+When you need to broadcast events to multiple parts of your application, such as notifying multiple UI components about changes.
+
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.MutableSharedFlow
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
+
+fun sharedFlowExample(): MutableSharedFlow<Int> = MutableSharedFlow()
+
+fun main() = runBlocking {
+    val sharedFlow = sharedFlowExample()
+
+    launch {
+        sharedFlow.onEach { value ->
+            println("Collector 1: $value")
+        }.collect()
+    }
+
+    launch {
+        sharedFlow.onEach { value ->
+            println("Collector 2: $value")
+        }.collect()
+    }
+
+    // Broadcasting events
+    sharedFlow.emit(1)
+    delay(1000)
+    sharedFlow.emit(2)
+}
+
+Use SharedFlow when broadcasting events or updates to multiple parts of your application.
