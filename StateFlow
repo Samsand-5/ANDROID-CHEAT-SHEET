@@ -1,0 +1,30 @@
+Characteristics:
+
+An extension of Flow with a built-in state-holding mechanism.
+Represents a stateful value that emits updates to its collectors.
+Well-suited for representing UI-related state in ViewModel.
+
+Use Cases:
+
+Best suited for handling UI-related state in ViewModels where the state needs to be retained across configuration changes.
+
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.runBlocking
+
+fun stateFlowExample(): MutableStateFlow<Int> = MutableStateFlow(0)
+
+fun main() = runBlocking {
+    val stateFlow = stateFlowExample()
+    
+    stateFlow.collect { value ->
+        println(value)
+    }
+
+    // Updating the state
+    stateFlow.value = 1
+    stateFlow.value = 2
+    stateFlow.value = 3
+}
+
+Use StateFlow when you need a stateful value, especially in ViewModel for UI-related state.
