@@ -1,0 +1,29 @@
+Characteristics:
+
+Asynchronous stream of values.
+Cold stream, meaning it starts emitting values only when it has a collector.
+Doesn’t have a built-in state-holding mechanism.
+
+Use Cases:
+
+Ideal for handling asynchronous operations and data streams.
+When you need a one-shot stream of data.
+
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.runBlocking
+
+fun simpleFlowExample(): Flow<Int> = flow {
+    for (i in 1..3) {
+        kotlinx.coroutines.delay(1000) // Simulate asynchronous work
+        emit(i)
+    }
+}
+
+fun main() = runBlocking {
+    simpleFlowExample().collect { value ->
+        println(value)
+    }
+}
+
+Use Flow when dealing with general asynchronous operations and one-shot data streams.
