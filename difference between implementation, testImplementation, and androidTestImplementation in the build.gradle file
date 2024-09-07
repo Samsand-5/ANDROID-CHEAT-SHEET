@@ -1,0 +1,35 @@
+** Android Interview Question**
+Question: What is the difference between implementation, testImplementation, and androidTestImplementation in the build.gradle file? 
+What will happen if you interchange the configurations (e.g., use "implementation" for testing dependencies or "androidTestImplementation" for main code dependencies)?
+
+Easiest Explainination :- Let’s deep dive into it.
+🔹 Implementation: 
+This is where you list all the stuff your main code directly depends on. 
+It is used to specify dependencies that are required by your main source code (src/main/java or src/main/kotlin).
+These dependencies are packaged into your final APK that is deployed to users. Examples include libraries for networking, UI components, etc.
+
+🔹 AndroidTestImplementation: 
+ Now, this is for the things needed to test your app when it's running on an actual Android device or emulator.
+Standard Definition :- It is used to specify dependencies that are required for testing your Android app using instrumentation tests. 
+so what are instrumentation tests??
+Instrumentation tests are written using the Android testing framework and are executed on a device or emulator to simulate user interactions.
+Example dependencies include Espresso for UI testing, Mockito for mocking objects, etc.
+The code for instrumentation tests is typically located in the "androidTest" directory of your project.
+
+🔹 TestImplementation:
+Lastly, this is for the special stuff needed just for testing your main code. Think of it like testing equipment in a lab. 
+You don't want this stuff going out with your app to users; it's only for making sure your app works as expected during development.
+Standard Definition:- It is used to specify dependencies that are required for unit testing your Android app. 
+
+What are Unit tests??
+Unit tests are written using a testing framework like JUnit and are executed on your development machine, not on a device or emulator. 
+These tests focus on testing individual units (methods or classes) of your code in isolation to ensure they behave as expected.
+Example dependencies include JUnit for unit testing, Mockito for mocking, etc.
+The code for unit tests is typically located in the "test" directory of your project.
+
+🔹 DebugImplementation:- is a specific dependency configuration used to specify dependencies that are only required when building the debug variant of your application.
+
+Now, what happens if you mix them up? 🤔Well, it's like putting ingredients meant for baking into your soup. if you interchange the configurations in your build.gradle file, 
+it can lead to several Build Errors. The build system will likely generate errors because it expects certain dependencies to be in specific configurations. 
+For example, if you use "androidTestImplementation" for a library that is needed in your main code, 
+the build process will fail because it won't be able to find that dependency during compilation.
