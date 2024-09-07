@@ -1,0 +1,29 @@
+1️⃣ What is <activity-alias>?
+An activity alias basically refers to an alias or alternate entry point for an activity in an Android application. 
+It allows you to create multiple entry points for the same activity by declaring in AndroidManifest.xml file using <activity-alias> tags.
+
+2️⃣ How does it work?
+When an intent matching the activity alias is received, it is directed to the target activity specified in the android:targetActivity attribute. 
+The target activity can be any activity within your application, and it's typically the primary activity you want the alias to represent.
+
+3️⃣ Why is it useful?
+Activity aliases enable defining multiple "entry points" into your app, each with its own configuration, including icon and label. 
+Think of it as creating different pathways for users to interact with your app.
+Activity alias represents a symlink to an Activity.
+
+Now, let's dive into some practical applications:
+
+🔹 Dynamic App Icons:  Activity alias allows you to change the app icon at runtime when specific conditions are met. 
+By dynamically changing the target activity of an alias, you can effectively change the icon and label associated 
+with the app without requiring a full update or reinstall from the Google Play Store. 
+
+🔹 Preserving Launcher Shortcuts: Ensure that changing the Launcher Activity doesn't result in the loss of shortcuts on the home screen. 
+Activity aliases help preserve these launchers in Android.
+
+🔹 Handling Intents and Deep Links: Create multiple entry points for your app, each configured to handle different intents or deep links. 
+This enhances navigation and user experience.
+
+🔹 Multi-Window Support: Another example of an important use case for activity aliases is in implementing multi-window support in Android apps.
+For instance, a note-taking app could have activity aliases configured to handle different window configurations. 
+One alias might be optimized for a full-screen experience, providing a rich editing interface with ample space for writing and formatting text.
+Another alias could be designed specifically for multi-window mode, with a more compact layout that allows users to view their notes alongside other apps simultaneously.
