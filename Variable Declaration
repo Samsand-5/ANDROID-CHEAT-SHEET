@@ -1,0 +1,9 @@
+1) Use val for properties that should remain constant after initialization, promoting immutability and predictability.
+
+2) Use var for properties that need to change their values over time, but be cautious about mutability.
+
+3) Use const val for compile-time constants with fixed, known values.
+
+4) Use lazy when you want to defer the initialization of properties that are expensive to compute and might not be used immediately.
+
+5) Use lateinit for non-nullable properties that cannot be initialized immediately, such as when working with dependency injection frameworks.
