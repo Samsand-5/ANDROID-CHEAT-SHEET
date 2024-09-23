@@ -19,3 +19,8 @@ However, it should be avoided in production code to prevent thread blocking.
 Use runBlocking for unit testing Android components that use coroutines.
 Use runBlocking for main functions, and for writing sequential code within a coroutine context.
 Avoid using runBlocking in production code, as it can block the calling thread and harm the responsiveness of the app.
+
+
+In summary, the choice of coroutine builder depends on your specific use case. If you need to perform background tasks concurrently, launch is a good choice. 
+If you require a result from the coroutine, async along with await() is the way to go. 
+runBlocking is mainly used for testing and writing sequential code in coroutine contexts, but it should be avoided in production code to prevent thread blocking.
