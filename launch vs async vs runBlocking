@@ -1,0 +1,16 @@
+launch: The launch builder is used to start a new coroutine that runs concurrently with the calling code. It is commonly used for fire-and-forget tasks, 
+where you don't need to wait for the coroutine to complete.
+Use viewModelScope when working within Android ViewModels. It provides automatic cancellation when the associated ViewModel is cleared, 
+ensuring that your background tasks don't leak resources.
+For Android components like Activities and Fragments, prefer using lifecycleScope to launch coroutines. 
+This scope provides similar benefits by automatically canceling coroutines when the associated component is destroyed.
+Avoid using GlobalScope in Android app components, as it doesn't provide automatic cancellation and may lead to resource leaks.The async Builder
+
+
+async: The async builder is used to start a new coroutine that computes a result. It returns a Deferred object, which represents the result of the asynchronous computation. 
+You can use await() to retrieve the result. It is suitable when you need to perform asynchronous computations and retrieve results.
+
+
+runBlocking: The runBlocking builder is used to start a new coroutine, blocking the calling thread until the coroutine completes. 
+It is often used for writing test cases, main functions, and for writing sequential code within a coroutine context. 
+However, it should be avoided in production code to prevent thread blocking.
