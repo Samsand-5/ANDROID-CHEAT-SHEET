@@ -9,8 +9,13 @@ Avoid using GlobalScope in Android app components, as it doesn't provide automat
 
 async: The async builder is used to start a new coroutine that computes a result. It returns a Deferred object, which represents the result of the asynchronous computation. 
 You can use await() to retrieve the result. It is suitable when you need to perform asynchronous computations and retrieve results.
+Use async when you need to perform asynchronous computations and retrieve results.
+Avoid using async without await() if you don't need the result, as it can lead to resource leaks.
 
 
 runBlocking: The runBlocking builder is used to start a new coroutine, blocking the calling thread until the coroutine completes. 
 It is often used for writing test cases, main functions, and for writing sequential code within a coroutine context. 
 However, it should be avoided in production code to prevent thread blocking.
+Use runBlocking for unit testing Android components that use coroutines.
+Use runBlocking for main functions, and for writing sequential code within a coroutine context.
+Avoid using runBlocking in production code, as it can block the calling thread and harm the responsiveness of the app.
