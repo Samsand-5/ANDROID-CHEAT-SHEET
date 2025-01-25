@@ -1,0 +1,17 @@
+Imagine you have a list of orders, and each order contains multiple items. You need a list of all items across all orders.
+
+Using flatMap:
+
+data class Order(val id: Int, val items: List<String>)
+
+fun main() {
+    val orders = listOf(
+        Order(1, listOf("Laptop", "Mouse")),
+        Order(2, listOf("Phone", "Charger")),
+        Order(3, listOf("Desk", "Chair"))
+    )
+
+    val allItems = orders.flatMap { it.items }
+
+    println(allItems) // Output: [Laptop, Mouse, Phone, Charger, Desk, Chair]
+}
