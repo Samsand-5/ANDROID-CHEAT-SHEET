@@ -1,0 +1,15 @@
+What is flatMap?
+The flatMap function is a combination of map and flatten. 
+It applies a transformation function to each element of a collection and then flattens the resulting collections into a single collection.
+
+Syntax:
+inline fun <T, R> Iterable<T>.flatMap(transform: (T) -> Iterable<R>): List<R>
+
+Example:
+fun main() {
+    val numbers = listOf(1, 2, 3)
+    val multipliedLists = numbers.flatMap { num -> listOf(num, num * 2, num * 3) }
+
+    println(multipliedLists) // Output: [1, 2, 3, 2, 4, 6, 3, 6, 9]
+}
+In this example, flatMap transforms each number into a list of its multiples and then flattens those lists into a single list.
