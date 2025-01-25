@@ -1,0 +1,19 @@
+Suppose you are working with an API response that contains a list of users, and each user has a list of hobbies. You want to extract all hobbies into a single list.
+
+Using flatMap:
+
+data class User(val name: String, val hobbies: List<String>)
+
+fun main() {
+    val users = listOf(
+        User("Alice", listOf("Reading", "Hiking")),
+        User("Bob", listOf("Gaming", "Cooking")),
+        User("Charlie", listOf("Swimming", "Cycling"))
+    )
+
+    val allHobbies = users.flatMap { it.hobbies }
+
+    println(allHobbies) // Output: [Reading, Hiking, Gaming, Cooking, Swimming, Cycling]
+}
+
+Here, flatMap flattens the nested structure of hobbies into a single list.
