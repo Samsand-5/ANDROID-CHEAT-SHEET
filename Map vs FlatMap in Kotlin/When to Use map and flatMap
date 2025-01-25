@@ -1,0 +1,3 @@
+Use map when you need to transform individual elements without flattening.
+
+Use flatMap when you need to transform elements and flatten nested structures.
