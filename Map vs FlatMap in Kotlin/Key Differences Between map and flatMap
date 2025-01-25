@@ -1,0 +1,15 @@
+map
+
+Transformation - Transforms elements individually
+
+Output Structure - Nested structure allowed
+
+Use Case - Simple transformations
+
+flatMap
+
+Transformation - Transforms elements and flattens the result
+
+Output Structure - Always a single flattened structure
+
+Use Case - Handling collections of collections
