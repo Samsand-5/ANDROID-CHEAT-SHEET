@@ -1,0 +1,21 @@
+Suppose you have a list of product categories, and each category contains a list of products with prices. 
+You want to apply a 10% discount to all products and get a flat list of discounted prices.
+
+Using flatMap:
+
+data class Product(val name: String, val price: Double)
+
+data class Category(val name: String, val products: List<Product>)
+
+fun main() {
+    val categories = listOf(
+        Category("Electronics", listOf(Product("TV", 500.0), Product("Radio", 100.0))),
+        Category("Furniture", listOf(Product("Sofa", 300.0), Product("Table", 150.0)))
+    )
+
+    val discountedPrices = categories.flatMap { category ->
+        category.products.map { it.price * 0.9 } // Apply 10% discount
+    }
+
+    println(discountedPrices) // Output: [450.0, 90.0, 270.0, 135.0]
+}
