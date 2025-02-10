@@ -1,0 +1,9 @@
+Memory leaks in Android can occur when objects are held in memory even though they are no longer needed, typically due to improper management of references. 
+To handle memory leaks, I would:
+
+Use weak references for objects that may outlive their useful life (e.g., context in a long-running task).
+Avoid inner classes or anonymous classes that hold implicit references to outer classes.
+Use tools like Android Profiler and LeakCanary to detect and diagnose memory leaks.
+
+Be mindful of lifecycle awareness in components. For example, using ViewModel to hold UI data ensures that the data persists across configuration changes without 
+leaking the Activity context.
