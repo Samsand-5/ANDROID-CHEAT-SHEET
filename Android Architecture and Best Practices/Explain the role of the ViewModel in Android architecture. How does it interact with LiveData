@@ -1,0 +1,5 @@
+The ViewModel is a part of the Android Architecture Components and is designed to store and manage UI-related data in a lifecycle-conscious way. 
+It allows data to survive configuration changes such as screen rotations. ViewModel provides data to the UI and acts as a communication center between the Repository and the UI.
+
+LiveData is an observable data holder class that allows UI components to observe data changes. In a typical scenario, the ViewModel holds LiveData instances and 
+exposes them to the UI. The UI observes these LiveData objects, and any changes in the data automatically trigger UI updates, ensuring the UI is always in sync with the data state.
