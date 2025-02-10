@@ -1,0 +1,7 @@
+JUnit: I use JUnit for unit testing because it is the standard testing framework for Java and Kotlin. It is well-documented, widely adopted, and integrates seamlessly with Android.
+
+Mockito: Mockito is my choice for mocking dependencies in unit tests. It allows for easy creation of mock objects and verification of interactions, 
+making it ideal for testing classes in isolation.
+
+Espresso: For UI testing, I prefer Espresso. It is designed specifically for Android UI testing and provides a rich API to interact with the UI elements,
+ensuring that tests are reliable and maintainable.
