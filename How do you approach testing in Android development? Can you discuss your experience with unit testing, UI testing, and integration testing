@@ -1,0 +1,7 @@
+Unit Testing: Write unit tests for individual components using frameworks like JUnit and Mockito. These tests focus on the business logic and ensure that individual functions 
+behave as expected.
+
+UI Testing: Use Espresso or UI Automator to perform UI testing. These tests simulate user interactions and verify that the UI behaves as expected.
+
+Integration Testing: Test the interaction between different modules or layers (e.g., ViewModel and Repository). Integration tests help identify issues when components interact 
+with each other.
