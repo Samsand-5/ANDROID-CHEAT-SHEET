@@ -1,0 +1,7 @@
+ViewModel: Use ViewModel to store UI-related data that should survive configuration changes. This ensures data persistence without the need to reload it from scratch.
+
+onSaveInstanceState(): Override this method to save the state of the UI components that need to be restored when the configuration changes.
+
+Retaining Fragments: Use retained fragments to retain instance variables during configuration changes.
+
+Avoid Activity Recreation: In some cases, I may choose to handle configuration changes manually using the configChanges attribute in the AndroidManifest.
