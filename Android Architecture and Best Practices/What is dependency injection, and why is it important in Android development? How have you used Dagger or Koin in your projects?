@@ -1,0 +1,7 @@
+Dependency Injection (DI) is a design pattern that allows objects to receive their dependencies from an external source rather than creating them internally. 
+This promotes code reusability, modularity, and easier testing. In Android, DI helps manage object creation and dependency resolution, especially when dealing with 
+complex applications.
+
+I have used both Dagger and Koin for DI. Dagger is a compile-time DI framework that ensures type safety and provides compile-time validation. 
+Koin is a simpler, lightweight alternative that is easy to set up and use but performs dependency resolution at runtime.
+In my projects, I use Dagger for larger projects requiring more robust, compile-time safety and Koin for smaller projects where setup time and ease of use are priorities.
