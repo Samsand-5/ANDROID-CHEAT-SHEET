@@ -1,0 +1,10 @@
+Separation of Concerns: Divide the application into layers such as presentation, domain, and data layers.
+Each layer would handle specific tasks and communicate with each other via well-defined interfaces.
+
+MVVM Pattern: As mentioned earlier, using MVVM helps keep the UI code separate from business logic, making the application easier to maintain and test.
+
+Dependency Injection: Use Dagger or Hilt to manage dependencies. This approach makes the code more modular and easier to test by providing dependencies at runtime.
+
+Repository Pattern: Use a repository to handle data operations, providing a clear API for data access and encapsulating data sources.
+
+Use of Architecture Components: Implement components like LiveData, ViewModel, Room, and Navigation to adhere to lifecycle management, data persistence, and efficient navigation.
