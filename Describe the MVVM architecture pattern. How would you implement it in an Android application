@@ -1,0 +1,12 @@
+MVVM stands for Model-View-ViewModel. It is an architectural pattern that helps separate the business logic from the UI code, making the codebase more modular, testable, 
+and maintainable.
+
+Model: Represents the data and business logic of the application. It is responsible for managing the data, which can come from a local database, network, or other sources.
+
+View: Represents the UI layer. It displays data and routes user interactions to the ViewModel.
+
+ViewModel: Acts as a bridge between the Model and the View. It holds the UI-related data and handles the communication between the View and Model. 
+It also manages the lifecycle awareness of UI components.
+
+In Android, MVVM can be implemented using ViewModel classes provided by the Android Architecture Components, LiveData for observable data, and Data Binding 
+for updating the UI based on LiveData changes.
